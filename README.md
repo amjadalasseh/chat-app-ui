@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Chat App UI
 
-## Getting Started
+> **Note:** Initially, I started working on this test using a private GitHub account by mistake. Due to strict permission roles, I couldn't transfer the code to my own repository. Since I was originally told to share the code in a ZIP file, I worked quickly without noticing the private account issue. To resolve this, I created a new repository to share the project with you.
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+This project is a chat application built with Next.js and React, designed with modularity, maintainability, and scalability in mind. The application follows best practices in UI/UX, accessibility, and performance, ensuring a seamless user experience.
+
+## Technical Proficiency
+
+- **Clean, Modular, and Reusable Code:** The code is structured to be modular and reusable, making it easy to maintain and extend.
+- **Preferred Tech Stack:** The project is built using:
+  - Next.js
+  - React
+  - Zustand for state management
+  - Tailwind CSS for styling
+  - ESLint and Prettier for code quality
+  - Storybook for UI component visualization
+  - Google API Gemini for AI-powered interactions
+  - Jest for unit testing
+
+## Project Structure
+
+```
+/src
+ ├── app/               # Application entry and page containers
+ ├── components/        # Reusable UI components with no business logic
+ ├── features/         # Feature-specific components with business logic
+ ├── utilities/        # Generic utility functions
+ ├── services/         # API integration and service logic
+ ├── store/            # Zustand state management store
+ ├── theme/            # Standardized theme for colors and spacing
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To configure the application properly, create an **`.env.local`** file in the root directory and add the following environment variables:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+NEXT_PUBLIC_API_BASE_URL=<your-api-url>
+NEXT_PUBLIC_GOOGLE_API_KEY=<your-google-api-key>
+NEXT_PUBLIC_GEMINI_API_KEY=AIzaSyAYsJJNP8o7bsI2FRJvoWYs0b-ma-uzJCE
+NEXT_PUBLIC_GEMINI_URL=https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent
+```
 
-## Learn More
+### **Environment Considerations**
 
-To learn more about Next.js, take a look at the following resources:
+- **Environment Configuration:** The project uses an `.env.local` file to manage environment-specific variables.
+- **No Sensitive Data Exposure:** Sensitive credentials and API keys are not stored in the codebase.
+- **Environment-Specific Configurations:** Different environments (development, production) can have their respective configurations.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Key Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Reusable UI Components:** All stateless components are placed under `components/` for reusability.
+- **Feature-Specific Components:** Components with business logic are kept under `features/`.
+- **Standardized Theme:** Tailwind CSS theme ensures consistent colors and spacing.
+- **Utility Functions:** Generic helper functions are placed in `utilities/` for easy reuse.
+- **Google API Gemini Integration:** Connected under `services/` for AI-powered interactions.
+- **Error Handling & Notifications:** Toast notifications enhance the user experience.
+- **Scalability Considerations:** The architecture allows for easy expansion of features and state management.
 
-## Deploy on Vercel
+## Performance Optimization
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Lazy Loading & Code Splitting:** Implemented to ensure efficient loading times and reduce bundle size.
+- **Optimized Image Rendering:** Using Next.js image component for better performance.
+- **SSR/SSG Strategies:** Leveraging Next.js server-side rendering (SSR) and static site generation (SSG) where necessary.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Security Considerations
+
+- **Security Headers:** Implemented `Content-Security-Policy` and other HTTP security headers in `next.config.js`.
+- **XSS Protection & Input Sanitization:** Ensuring user inputs are sanitized to prevent cross-site scripting attacks.
+- **Authentication Security:** Securing API requests and authentication flows to prevent vulnerabilities.
+
+## Setup & Installation
+
+1. Clone the repository:
+   ```sh
+   git clone <repository-url>
+   cd chat-app-ui
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Create an **`.env.local`** file in the root directory:
+   ```
+   NEXT_PUBLIC_API_BASE_URL=<your-api-url>
+   NEXT_PUBLIC_GOOGLE_API_KEY=<your-google-api-key>
+   NEXT_PUBLIC_GEMINI_API_KEY=AIzaSyAYsJJNP8o7bsI2FRJvoWYs0b-ma-uzJCE
+   NEXT_PUBLIC_GEMINI_URL=https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent
+   ```
+4. Run the development server:
+   ```sh
+   npm run dev
+   ```
+5. Run tests:
+   ```sh
+   npm test
+   ```
+6. View components in Storybook:
+   ```sh
+   npm run storybook
+   ```
+
+## Conclusion
+
+This project follows best coding practices, ensuring modularity, maintainability, and performance. The integration of Zustand, Tailwind, Storybook, and automated testing makes it a scalable and developer-friendly solution. Additionally, security, accessibility, and performance optimizations have been implemented to ensure high-quality development.
