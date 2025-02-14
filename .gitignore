@@ -21,9 +21,6 @@ out/
 .vercel/
 .vscode/
 
-# Storybook files
-.storybook/
-storybook-static/
 
 # Husky
 .husky/_/
