@@ -39,9 +39,10 @@ To configure the application properly, create an **`.env.local`** file in the ro
 ```
 NEXT_PUBLIC_API_BASE_URL=<your-api-url>
 NEXT_PUBLIC_GOOGLE_API_KEY=<your-google-api-key>
-NEXT_PUBLIC_GEMINI_API_KEY=AIzaSyAYsJJNP8o7bsI2FRJvoWYs0b-ma-uzJCE
-NEXT_PUBLIC_GEMINI_URL=https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent
+
 ```
+
+the token is shared with the email with Nina
 
 ### **Environment Considerations**
 
@@ -83,12 +84,14 @@ NEXT_PUBLIC_GEMINI_URL=https://generativelanguage.googleapis.com/v1beta/models/g
    npm install
    ```
 3. Create an **`.env.local`** file in the root directory:
+
    ```
    NEXT_PUBLIC_API_BASE_URL=<your-api-url>
    NEXT_PUBLIC_GOOGLE_API_KEY=<your-google-api-key>
    NEXT_PUBLIC_GEMINI_API_KEY=AIzaSyAYsJJNP8o7bsI2FRJvoWYs0b-ma-uzJCE
-   NEXT_PUBLIC_GEMINI_URL=https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent
+
    ```
+
 4. Run the development server:
    ```sh
    npm run dev
