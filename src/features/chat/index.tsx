@@ -83,7 +83,7 @@ const ChatFeature = () => {
 
           {/* ✅ Scrolling now works **smoothly** */}
           <div
-            className={`overflow-y-auto flex border-b ${theme.spacing.md} ${theme.heights.lg.max} ${theme.heights.lg.h}`}
+            className={`overflow-y-auto flex flex-col space-y-2 border-b ${theme.spacing.md} ${theme.heights.lg.max} ${theme.heights.lg.h}`}
           >
             <div>
               {messages.map((msg) => (

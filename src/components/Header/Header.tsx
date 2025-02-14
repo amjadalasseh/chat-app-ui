@@ -15,6 +15,7 @@ const Header = () => {
     "/help": "Help Center",
     "/contact": "Contact Us",
     "/chat": "Live Chat",
+    "/refund": "Refund Policy",
   };
 
   const currentPageTitle = pageTitles[pathname] || "FlixBus";

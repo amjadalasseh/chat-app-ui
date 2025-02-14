@@ -2,20 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 🌎 Theme-based Colors */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: theme(colors.black); /* Tailwind white */
+  --foreground: theme(colors.gray.900); /* Tailwind gray-900 */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* 🆕 Help Page Background */
+@layer components {
+  .bg-help-page {
+    @apply bg-cover bg-center bg-no-repeat relative;
+    background-image: url("/images/help-background.jpg");
+  }
+
+  .bg-help-page::before {
+    @apply absolute inset-0 bg-gradient-to-b from-transparent to-white dark:to-gray-900 backdrop-blur-md;
+    content: "";
   }
 }
 
+/* ✨ Global Styles */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply text-[var(--foreground)] bg-[var(--background)] font-sans;
 }
