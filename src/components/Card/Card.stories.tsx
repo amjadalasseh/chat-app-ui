@@ -1,4 +1,3 @@
-import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { FaBeer, FaHeart } from "react-icons/fa";
 import Card from "./Card";
@@ -16,7 +15,7 @@ const meta: Meta<typeof Card> = {
     color: { control: "color" },
     icon: {
       control: "select",
-      options: { None: null, Beer: FaBeer, Heart: FaHeart },
+      options: [null, FaBeer, FaHeart],
       mapping: { Beer: FaBeer, Heart: FaHeart },
     },
     onClick: { action: "button clicked" },
